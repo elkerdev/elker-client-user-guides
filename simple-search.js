@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         ['submit', 'send', 'file', 'save', 'complete'],
         
         // Report-related terms
-        ['report', 'complaint', 'issue', 'incident', 'submission', 'case', 'matter', 'form', 'document', 'reports'],
+        ['report', 'complaint', 'issue', 'incident', 'submission', 'case', 'matter', 'form', 'document', 'reports', 'disclosure'],
         ['note', 'notes', 'comment', 'annotation', 'remark'],
         ['tag', 'tags', 'tagging', 'label', 'category', 'attribute', 'attributes'],
         
