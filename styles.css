@@ -1,0 +1,894 @@
+/* Elker Scribes - Shared Styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:wght@300;400;500&display=swap');
+
+/* CSS Variables */
+:root {
+  /* Colors from Elker design system */
+  --color-primary: #2c6971;
+  --color-accent: #5b72e8;
+  --color-button-bg: #8396f5;
+  --color-background: #f9f8f6;
+  --color-background-secondary: #f3f1ec;
+  --color-surface: #ffffff;
+  --color-text: #121826;
+  --color-text-muted: #6b7280;
+  --color-border: #e5e7eb;
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  
+  /* Typography */
+  --font-heading: "Lora", serif;
+  --font-body: "Inter", sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+  
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius: 0.5rem;
+  --radius-lg: 0.75rem;
+  
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  
+  /* Search highlight color */
+  --color-highlight: #fef3c7;
+}
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+  /* Improve text rendering on mobile */
+  text-rendering: optimizeLegibility;
+  /* Prevent text size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 300;
+  line-height: 1.3;
+  color: var(--color-text);
+  margin-bottom: var(--spacing-md);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: var(--spacing-lg);
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+}
+
+h6 {
+  font-size: 1.125rem;
+}
+
+p {
+  margin-bottom: var(--spacing-md);
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+}
+
+.container-narrow {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  /* Prevent horizontal scroll on mobile */
+  overflow-x: hidden;
+}
+
+/* Cards */
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
+  transition: box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  margin-bottom: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.card-body {
+  padding: 0;
+}
+
+/* Buttons */
+.button {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 1rem;
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: calc(var(--radius) - 2px);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+  text-decoration: none;
+}
+
+.button-primary {
+  background-color: var(--color-button-bg);
+  border-color: var(--color-accent);
+  color: white;
+}
+
+.button-primary:hover {
+  background-color: var(--color-accent);
+  text-decoration: none;
+}
+
+.button-secondary {
+  background-color: transparent;
+  border-color: var(--color-border);
+  color: var(--color-text);
+}
+
+.button-secondary:hover {
+  background-color: var(--color-background-secondary);
+  border-color: var(--color-text-muted);
+}
+
+/* Utility Classes */
+.text-muted {
+  color: var(--color-text-muted);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.mb-0 { margin-bottom: 0; }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+.mb-2xl { margin-bottom: var(--spacing-2xl); }
+
+.mt-0 { margin-top: 0; }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+.mt-2xl { margin-top: var(--spacing-2xl); }
+
+/* Grid */
+.grid {
+  display: grid;
+  gap: var(--spacing-lg);
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-width: 768px) {
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Scribe-specific Styles */
+.scribe-container {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-3xl);
+  margin: var(--spacing-2xl) 0;
+}
+
+
+/* Style the title and author when they're direct children */
+body > .scribe-title,
+.scribe-container > .scribe-title {
+  font-size: 2.75rem;
+  color: rgb(17, 24, 39);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-lg);
+  text-align: left;
+  padding-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--color-border);
+}
+
+body > .scribe-author,
+.scribe-container > .scribe-author {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  text-align: center;
+  margin-bottom: var(--spacing-3xl);
+  padding-bottom: var(--spacing-2xl);
+  border-bottom: 2px solid var(--color-background-secondary);
+}
+
+.scribe-author a {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+/* Remove the br tags after author */
+.scribe-author + br,
+.scribe-author + br + br {
+  display: none;
+}
+
+/* Default step styling - each step is its own card */
+.scribe-step {
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* When a screenshot immediately follows a step, group them visually */
+.scribe-step:has(+ .scribe-screenshot-container) {
+  margin-bottom: 0;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  border-bottom: none;
+}
+
+/* Style screenshot containers that follow steps */
+.scribe-step + .scribe-screenshot-container {
+  margin: 0 0 var(--spacing-2xl) 0;
+  padding: var(--spacing-xl);
+  background-color: var(--color-surface);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  border-top: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* For screenshot containers that don't follow a step (shouldn't happen but just in case) */
+.scribe-screenshot-container:not(.scribe-step + .scribe-screenshot-container) {
+  margin-bottom: var(--spacing-2xl);
+  padding: var(--spacing-xl);
+  background-color: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--color-border);
+  text-align: center;
+}
+
+.scribe-step-text {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add margin between paragraphs within scribe-step-text */
+.scribe-step-text p {
+  margin-bottom: var(--spacing-md);
+}
+
+/* Remove margin from the last paragraph */
+.scribe-step-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Tips styling */
+/* Target the parent div that contains a tip */
+.scribe-step:has(.scribe-step-tip) {
+  background-color: rgb(225, 244, 173);
+}
+
+/* For browsers without :has() support, at least style the text background */
+.scribe-step-tip {
+  background-color: rgb(225, 244, 173);
+  display: block;
+  margin: calc(var(--spacing-xl) * -1);
+  padding: var(--spacing-xl);
+}
+
+
+.scribe-step-tip .scribe-step-text::before {
+  content: "💡 ";
+  font-weight: 600;
+}
+
+.scribe-screenshot {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+  /* Ensure images don't overflow on mobile */
+  display: block;
+  margin: 0 auto;
+}
+
+/* Mobile image optimizations */
+@media (max-width: 768px) {
+  .scribe-screenshot {
+    border-radius: var(--radius-sm);
+    /* Allow normal scrolling and pinch-to-zoom on mobile */
+    touch-action: auto;
+    /* Make images use full available width */
+    width: 100%;
+    max-width: none;
+  }
+  
+  /* Make clickable areas larger for touch */
+  .scribe-screenshot-container a {
+    display: block;
+    padding: 0;
+  }
+}
+
+/* Navigation for Index Page */
+.nav-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--spacing-lg) 0;
+  margin-bottom: var(--spacing-3xl);
+}
+
+.nav-header h1 {
+  margin-bottom: 0;
+  color: rgb(17, 24, 39);
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+}
+
+.guide-card {
+  background: var(--color-surface);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--spacing-xl);
+  transition: all 0.2s ease;
+  text-decoration: none;
+  color: var(--color-text);
+  display: block;
+}
+
+.guide-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
+  text-decoration: none;
+}
+
+.guide-card h3 {
+  color: rgb(17, 24, 39);
+  margin-bottom: var(--spacing-sm);
+}
+
+.guide-card p {
+  color: var(--color-text-muted);
+  font-size: 0.875rem;
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+/* Mobile-first improvements */
+@media (max-width: 768px) {
+  /* Typography adjustments for better readability on mobile */
+  body {
+    font-size: 16px;
+  }
+  
+  h1 { 
+    font-size: 1.75rem !important; 
+    line-height: 1.2;
+    margin-top: var(--spacing-xl);
+  }
+  h2 { 
+    font-size: 1.5rem !important; 
+    line-height: 1.25;
+  }
+  h3 { 
+    font-size: 1.25rem !important; 
+    line-height: 1.3;
+  }
+  h4 { font-size: 1.1rem !important; }
+  h5 { font-size: 1rem !important; }
+  h6 { font-size: 0.875rem !important; }
+  
+  /* Reduce padding on mobile for better space utilization */
+  .scribe-container {
+    padding: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    border-radius: var(--radius);
+  }
+  
+  body > .scribe-title,
+  .scribe-container > .scribe-title {
+    font-size: 1.5rem !important;
+    text-align: center;
+  }
+  
+  /* Better container padding on mobile */
+  .container,
+  .container-narrow {
+    padding: 0 var(--spacing-lg);
+  }
+  
+  /* Single column grid on mobile */
+  .guide-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  /* Improve card layout on mobile */
+  .card {
+    padding: var(--spacing-lg);
+  }
+  
+  .guide-card {
+    padding: var(--spacing-lg);
+  }
+  
+  /* Better touch targets for mobile */
+  .button {
+    padding: var(--spacing-md) var(--spacing-lg);
+    font-size: 1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Scribe step improvements */
+  .scribe-step {
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border-radius: var(--radius);
+  }
+  
+  .scribe-step-text {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Screenshot container adjustments - maximize image space */
+  .scribe-step + .scribe-screenshot-container {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .scribe-screenshot-container:not(.scribe-step + .scribe-screenshot-container) {
+    padding: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  /* Tip styling adjustments */
+  .scribe-step-tip {
+    margin: calc(var(--spacing-md) * -1);
+    padding: var(--spacing-md);
+  }
+  
+  /* Navigation header improvements */
+  .nav-header {
+    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .nav-header h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  .nav-header p {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+  }
+  
+  /* List improvements for mobile */
+  ul, ol {
+    margin-left: var(--spacing-lg);
+  }
+}
+
+/* Small mobile devices (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Maintain readable font sizes on very small screens */
+  body {
+    font-size: 15px;
+  }
+  
+  h1 { 
+    font-size: 1.5rem !important; 
+    margin-top: var(--spacing-lg);
+  }
+  h2 { font-size: 1.25rem !important; }
+  h3 { font-size: 1.125rem !important; }
+  
+  /* Maintain reasonable padding on very small screens */
+  .container,
+  .container-narrow {
+    padding: 0 var(--spacing-md);
+  }
+  
+  .scribe-container {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+  }
+  
+  .scribe-step {
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-sm);
+  }
+  
+  body > .scribe-title,
+  .scribe-container > .scribe-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .nav-header h1 {
+    font-size: 1.5rem !important;
+  }
+  
+  .guide-card {
+    padding: var(--spacing-md);
+  }
+  
+  /* Stack buttons on very small screens */
+  .button {
+    width: 100%;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Reduce vertical spacing in landscape mode */
+  .scribe-container {
+    padding: var(--spacing-lg) var(--spacing-xl);
+  }
+  
+  .nav-header {
+    padding: var(--spacing-sm) 0;
+    margin-bottom: var(--spacing-lg);
+  }
+}
+
+/* Fallback for browsers without :has() support */
+@supports not selector(:has(+ *)) {
+  /* Make all steps standalone cards */
+  .scribe-step {
+    margin-bottom: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  
+  /* Style screenshots as standalone cards too */
+  .scribe-step + .scribe-screenshot-container {
+    margin-top: calc(var(--spacing-xl) * -0.5);
+    border-radius: var(--radius-lg);
+    border-top: 1px solid var(--color-border);
+  }
+}
+
+/* In-Page Navigation Styles */
+.scribe-navigation {
+  position: sticky;
+  top: var(--spacing-xl);
+  margin-top: var(--spacing-2xl);
+  margin-bottom: var(--spacing-2xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  padding: var(--spacing-md);
+}
+
+.scribe-navigation .nav-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgb(17, 24, 39);
+  margin-bottom: var(--spacing-sm);
+  font-family: var(--font-body);
+}
+
+.scribe-navigation .nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.scribe-navigation .nav-item {
+  margin-bottom: 2px;
+}
+
+.scribe-navigation .nav-link {
+  display: block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  color: var(--color-text);
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+}
+
+.scribe-navigation .nav-link:hover {
+  background-color: var(--color-background-secondary);
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.scribe-navigation .nav-link.active {
+  background-color: var(--color-background-secondary);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+/* Adjust container layout when navigation is present */
+.container-narrow:has(.scribe-navigation) {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--spacing-xl);
+  align-items: start;
+}
+
+/* Make navigation full width on mobile */
+@media (max-width: 768px) {
+  .scribe-navigation {
+    position: static;
+    margin-bottom: var(--spacing-xl);
+    padding: var(--spacing-sm);
+    /* Make navigation collapsible on mobile */
+    max-height: 60vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .container-narrow:has(.scribe-navigation) {
+    display: block;
+  }
+  
+  .scribe-navigation .nav-title {
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-xs);
+  }
+  
+  .scribe-navigation .nav-link {
+    font-size: 0.875rem;
+    padding: var(--spacing-sm) var(--spacing-md);
+    /* Better touch targets */
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .scribe-navigation .nav-link.active {
+    font-weight: 600;
+  }
+}
+
+/* Fallback for browsers without :has() support - navigation will still work but won't have grid layout */
+@supports not selector(:has(.scribe-navigation)) {
+  .scribe-navigation {
+    max-width: 250px;
+    float: left;
+    margin-right: var(--spacing-2xl);
+  }
+  
+  .scribe-container {
+    clear: both;
+  }
+}
+
+/* Search Styles */
+.search-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.search-input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1rem;
+  font-family: var(--font-body);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(91, 114, 232, 0.1);
+}
+
+.search-results {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: var(--spacing-sm);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  max-height: 400px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
+}
+
+.search-no-results {
+  padding: var(--spacing-lg);
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.search-result-group {
+  padding: var(--spacing-md);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.search-result-group:last-child {
+  border-bottom: none;
+}
+
+.search-result-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-sm);
+}
+
+.search-result-title a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.search-result-title a:hover {
+  text-decoration: underline;
+}
+
+.search-result-steps {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-result-step {
+  margin-bottom: var(--spacing-xs);
+}
+
+.search-result-step a {
+  display: flex;
+  align-items: flex-start;
+  padding: var(--spacing-sm);
+  border-radius: var(--radius);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: background-color 0.2s;
+}
+
+.search-result-step a:hover {
+  background-color: var(--color-background);
+}
+
+.search-result-tip a {
+  background-color: rgba(225, 244, 173, 0.3);
+}
+
+.search-result-tip a:hover {
+  background-color: rgba(225, 244, 173, 0.5);
+}
+
+.step-icon {
+  flex-shrink: 0;
+  width: 24px;
+  margin-right: var(--spacing-sm);
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+.step-content {
+  flex: 1;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.step-content mark {
+  background-color: var(--color-highlight);
+  padding: 0.1em 0.2em;
+  border-radius: 2px;
+}
+
+.search-result-more {
+  padding: var(--spacing-sm);
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  font-style: italic;
+}
